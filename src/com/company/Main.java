@@ -10,6 +10,21 @@ interface B
 }
 class Main1 implements B
 {
+	Main1()
+	{
+		System.out.println("Starting with the hashset");
+		Set<Integer> s1=new HashSet<>();
+		s1.add(32);
+		s1.add(56);
+		s1.add(12);
+		s1.add(90);
+
+		Iterator<Integer> ix=s1.iterator();
+		while(ix.hasNext())
+		{
+			System.out.println(ix.next());
+		}
+	}
 	public void call2()
 	{
 		System.out.println("This is B calling from Main1");
@@ -17,6 +32,8 @@ class Main1 implements B
 
 }
 public class Main implements A {
+	public static List<Integer> l1=new LinkedList<>();
+
 	public void call1()
 	{
 		System.out.println("Hi I was called");
@@ -26,6 +43,17 @@ public class Main implements A {
 		System.out.println("This was called by me");
 	}
     public static void main(String[] args) {
+		List<Integer> l3=new Stack<>();
+		l3.add(45);
+
+		l1.add(44);
+		l1.add(45);
+		l1.add(46);
+		l1.add(47);
+		l1.add(48);
+		l1.add(49);
+		l1.add(50);
+		l1.add(51);
 
 	System.out.println("This marks the first commit for practice");
 	System.out.println("Lets start with comparators");
@@ -47,7 +75,11 @@ public class Main implements A {
 	{
 		System.out.println("The value at index "+e.getKey()+" is "+e.getValue());
 	}
-//	System.out.println(new ArrayList<Integer>(Arrays.asList(23,5,43,67)}).Class);
+	Iterator<Integer> i2=l1.iterator();
+	while(i2.hasNext())
+		System.out.println(i2.next());
 
+//	System.out.println(new ArrayList<Integer>(Arrays.asList(23,5,43,67)}).Class);
+Main1 memo=new Main1();
     }
 }
